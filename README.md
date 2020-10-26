@@ -14,13 +14,13 @@ The FreeformGestureDetector class acts like a regular gesture detector. It recei
 
 Create an instance for your View. The callback `implements FreeformGestureDetector.OnGestureListener`.
 
-```
+```java
 FreeformGestureDetector freeformGestureDetector = new FreeformGestureDetector(getContext(), callback);
 ```
 
 In the View's touch event handler, unconditionally call `freeformGestureDetector.onTouchEvent(MotionEvent)`.
 
-```
+```java
 @Override
 public boolean onTouch(View v, MotionEvent e) {
 	freeformGestureDetector.onTouchEvent(e);
@@ -32,7 +32,7 @@ The callback will be executed for each resulting transform event. The transforma
 
 The `transform` parameter contains the accumulated transformation since the last call that the callback has returned true (Similar behavior as ScaleGestureDetector).
 
-```
+```java
 @Override
 public boolean onTransform(MotionEvent ev, Matrix transform) {
 	// Handle transform events here
@@ -45,7 +45,7 @@ public boolean onTransform(MotionEvent ev, Matrix transform) {
 
 Add JitPack to your root `build.gradle`'s repositories.
 
-```
+```gradle
 allprojects {
 	repositories {
 		...
@@ -56,7 +56,7 @@ allprojects {
 
 In your app's `build.gradle` dependencies:
 
-```
+```gradle
 dependencies {
 	implementation 'com.github.Kalabasa:FreeformGestureDetector:1.0.0'
 }
